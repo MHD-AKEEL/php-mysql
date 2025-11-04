@@ -24,3 +24,11 @@ $i = 0;
     }
     ?>
 </table>
+
+
+<pre>
+<?php
+$rows = 10;
+system('a.exe ' . $rows);
+?>
+</pre>

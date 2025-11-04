@@ -1,8 +1,14 @@
 #include <stdio.h>
-int main(){
-    int i,j;
-    i=10;
-    j=20;
-    printf("%d\n", i+j);
-    return 0;
+#include <stdlib.h>
+int main (int argc, char * argv[]){
+    int rows = atoi(argv[1]);
+    for (int i=0; i<rows; i++){
+        for (int j = 0; j < i; j++){
+            printf("*");
+        }
+        {
+            printf("\n");
+        }
+        
+    }
 }
