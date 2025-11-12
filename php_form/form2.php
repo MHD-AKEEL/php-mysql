@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+
+</html>
 <html>
 
 <body>
@@ -12,10 +15,10 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
-        Welcome <?php echo $_POST["fname"];?> <br>
+        Welcome <?php echo $_POST["fname"]; ?> <br>
         Your Email is : <?php echo $_POST["email"];
-    }
-    ?>
+                    }
+                        ?>
 
 </body>
 
