@@ -11,9 +11,9 @@
     </form>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo $_POST["fname"];
-        echo $_POST["email"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { ?>
+        Welcome <?php echo $_POST["fname"];?> <br>
+        Your Email is : <?php echo $_POST["email"];
     }
     ?>
 
