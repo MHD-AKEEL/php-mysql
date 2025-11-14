@@ -13,7 +13,8 @@
 <body>
 
     <?php 
-    $nameErr = $emailErr =  $genderErr = "";
+    // define variables and set to empty values
+    $nameErr = $emailErr =  $genderErr = $websiteErr = "";
     $name = $email = $website = $comment = $gender = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -22,6 +23,11 @@
         }
         else {
             $name = test($_POST["name"]);
+
+            // check if name only contains letter and whitespace
+            if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+                $nameErr = "Only Letter And White Space Allowed";
+            }
         }
 
         if (empty($_POST["email"])) {
@@ -29,6 +35,11 @@
         }
         else {
             $email = test($_POST["email"]);
+
+            // check if e-mail address is well-formed
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid Email Format";
+            }
         }
 
         if (empty($_POST["website"])) {
@@ -36,6 +47,11 @@
         }
         else {
             $website = test($_POST["website"]);
+
+            // check if URL address syntex is valid
+            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+                $websiteErr = "Invalid URL";
+            }
         }
 
         if (empty($_POST["comment"])) {
@@ -68,7 +84,8 @@
         <span class="error">* <?php echo $nameErr;?></span><br><br>
         E-mail: <input type="email" name="email">
         <span class="error">* <?php echo $emailErr;?></span><br><br>
-        Website: <input type="text" name="website"><br><br>
+        Website: <input type="text" name="website">
+        <span class="error"> <?php echo $websiteErr;?></span><br><br>
         Comment: <textarea name="comment" rows="5" cols="40"></textarea><br><br>
         Gender:
         <input type="radio" name="gender" value="male">Male
