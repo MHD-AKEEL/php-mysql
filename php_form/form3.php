@@ -41,8 +41,19 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 
- 
-
+    <?php
+    echo "<h2>Your Input:</h2>";
+    echo "Welcome " . $name;
+    echo "<br>";
+    echo "E-mail: " . $email;
+    echo "<br>";
+    echo "Website: " . $website;
+    echo "<br>";
+    echo "Comment: " . $comment;
+    echo "<br>";
+    echo "Gender: " . $gender;
+    ?>
+    
 </body>
 
 </html>
