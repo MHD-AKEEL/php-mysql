@@ -53,7 +53,7 @@
     echo "<br>";
     echo "Gender: " . $gender;
     ?>
-    
+
 </body>
 
 </html>
